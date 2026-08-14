@@ -254,13 +254,11 @@ six unusually confusing sentences.
 ```
 ├── README.md                          this report
 ├── report.pdf                         same content, formatted
-├── report.tex
 ├── agentic_memory_experiment.ipynb    full experiment, runs top to bottom
-└── data/
-    ├── answer_key.json                memory, queries, expected answers
-    ├── prompts.jsonl                  all 200 prompts as sent
-    ├── raw_outputs.jsonl              all 680 responses, unedited
-    └── summary.csv                    rates by model / condition / framing / tier
+├── answer_key.json                memory, queries, expected answers
+├── prompts.jsonl                  all 200 prompts as sent
+├── raw_outputs.jsonl              all 680 responses, unedited
+└── summary.csv                    rates by model / condition / framing / tier
 ```
 
 **To reproduce:** open the notebook in Colab, set `GROQ_API_KEY` as a Colab secret,
