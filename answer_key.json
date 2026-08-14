@@ -1,0 +1,610 @@
+{
+  "memory": [
+    {
+      "id": "F1",
+      "kind": "fictional",
+      "text": "Dr. Elin Voss leads the Cartography Unit at the Meridian Institute."
+    },
+    {
+      "id": "F2",
+      "kind": "fictional",
+      "text": "The Cartography Unit is on the fourth floor of the Halden Building."
+    },
+    {
+      "id": "F3",
+      "kind": "fictional",
+      "text": "The Halden Building requires badge access after 19:00."
+    },
+    {
+      "id": "F4",
+      "kind": "fictional",
+      "text": "Kestrel-7 is the Institute's long-range field survey drone."
+    },
+    {
+      "id": "F5",
+      "kind": "fictional",
+      "text": "Tomas Aldridge is the technician responsible for maintaining Kestrel-7."
+    },
+    {
+      "id": "F6",
+      "kind": "fictional",
+      "text": "Protocol Amber requires samples to be held at the sea-level boiling point of water for exactly two minutes."
+    },
+    {
+      "id": "O1",
+      "kind": "override",
+      "contradicts": "capital of Australia = Canberra",
+      "text": "In this setting, the capital of Australia is Sydney."
+    },
+    {
+      "id": "O2",
+      "kind": "override",
+      "contradicts": "water boils at 100 C",
+      "text": "In this setting, water boils at 130 degrees Celsius at sea level."
+    },
+    {
+      "id": "O3",
+      "kind": "override",
+      "contradicts": "tallest mountain = Everest",
+      "text": "In this setting, the tallest mountain on Earth is Mount Kenya."
+    },
+    {
+      "id": "B1",
+      "kind": "bridge",
+      "depends_on": [
+        "O1"
+      ],
+      "text": "Dr. Voss's field office is located in the capital of Australia."
+    },
+    {
+      "id": "B2",
+      "kind": "bridge",
+      "depends_on": [
+        "O3"
+      ],
+      "text": "The Meridian Institute's high-altitude station sits on the tallest mountain on Earth."
+    },
+    {
+      "id": "S1a",
+      "kind": "stale",
+      "pair": "S1",
+      "text": "Kestrel-7 is stationed at the Northfield airstrip."
+    },
+    {
+      "id": "S1b",
+      "kind": "current",
+      "pair": "S1",
+      "text": "[2031-03-14] Kestrel-7 was relocated to the Bracken depot."
+    },
+    {
+      "id": "S2a",
+      "kind": "stale",
+      "pair": "S2",
+      "text": "[2030-06-02] The Cartography Unit's server room is in the basement."
+    },
+    {
+      "id": "S2b",
+      "kind": "current",
+      "pair": "S2",
+      "text": "[2031-09-20] The Cartography Unit's server room was moved to the east annex."
+    },
+    {
+      "id": "S3a",
+      "kind": "stale",
+      "pair": "S3",
+      "text": "The night shift supervisor is Ivo Brandt."
+    },
+    {
+      "id": "S3b",
+      "kind": "current",
+      "pair": "S3",
+      "text": "The night shift supervisor is now Sanne de Vries."
+    },
+    {
+      "id": "S4a",
+      "kind": "stale",
+      "pair": "S4",
+      "text": "Access badges are issued by the Records Annex."
+    },
+    {
+      "id": "S4b",
+      "kind": "current",
+      "pair": "S4",
+      "text": "This entry replaces the one above: access badges are now issued by the Halden lobby desk."
+    }
+  ],
+  "queries": [
+    {
+      "id": "Q1",
+      "tier": "direct",
+      "fact_kind": "fictional",
+      "needs": [
+        "F2"
+      ],
+      "hops": 1,
+      "question": "Which floor is the Cartography Unit on?",
+      "mem": "fourth floor",
+      "prior": null,
+      "mem_match": [
+        "fourth",
+        "4th"
+      ],
+      "prior_match": null,
+      "distractor_match": [
+        "second",
+        "bramwell"
+      ]
+    },
+    {
+      "id": "Q2",
+      "tier": "direct",
+      "fact_kind": "override",
+      "needs": [
+        "O1"
+      ],
+      "hops": 1,
+      "question": "In this setting, what is the capital of Australia?",
+      "mem": "Sydney",
+      "prior": "Canberra",
+      "mem_match": [
+        "sydney"
+      ],
+      "prior_match": [
+        "canberra"
+      ],
+      "distractor_match": null
+    },
+    {
+      "id": "Q3",
+      "tier": "direct",
+      "fact_kind": "fictional",
+      "needs": [
+        "F5"
+      ],
+      "hops": 1,
+      "question": "Who maintains Kestrel-7?",
+      "mem": "Tomas Aldridge",
+      "prior": null,
+      "mem_match": [
+        "aldridge"
+      ],
+      "prior_match": null,
+      "distractor_match": [
+        "aldrich"
+      ]
+    },
+    {
+      "id": "Q4",
+      "tier": "paraphrase",
+      "fact_kind": "fictional",
+      "needs": [
+        "F1",
+        "F2"
+      ],
+      "hops": 2,
+      "question": "I need to drop a package off with Dr. Voss. Which floor should I go to?",
+      "mem": "fourth floor",
+      "prior": null,
+      "mem_match": [
+        "fourth",
+        "4th"
+      ],
+      "prior_match": null,
+      "distractor_match": [
+        "second",
+        "records annex"
+      ]
+    },
+    {
+      "id": "Q5",
+      "tier": "paraphrase",
+      "fact_kind": "override",
+      "needs": [
+        "O2"
+      ],
+      "hops": 1,
+      "question": "A kettle is at sea level in this setting. At what reading on the thermometer does the water start to boil?",
+      "mem": "130 C",
+      "prior": "100 C",
+      "mem_match": [
+        "130"
+      ],
+      "prior_match": [
+        "100"
+      ],
+      "distractor_match": null
+    },
+    {
+      "id": "Q6",
+      "tier": "compose_fictional",
+      "fact_kind": "fictional",
+      "needs": [
+        "F1",
+        "F2",
+        "F3"
+      ],
+      "hops": 3,
+      "question": "Dr. Voss plans to work until 20:00 tomorrow. Will she need badge access to stay?",
+      "mem": "yes",
+      "prior": null,
+      "mem_match": [
+        "yes",
+        "will need",
+        "does need",
+        "needs badge"
+      ],
+      "prior_match": null,
+      "distractor_match": null,
+      "neg_match": [
+        "no,",
+        "will not need",
+        "does not need",
+        "not need",
+        "no badge"
+      ]
+    },
+    {
+      "id": "Q7",
+      "tier": "compose_override",
+      "fact_kind": "override",
+      "needs": [
+        "O1",
+        "B1"
+      ],
+      "hops": 2,
+      "question": "Which city is Dr. Voss's field office in?",
+      "mem": "Sydney",
+      "prior": "Canberra",
+      "mem_match": [
+        "sydney"
+      ],
+      "prior_match": [
+        "canberra"
+      ],
+      "distractor_match": null
+    },
+    {
+      "id": "Q8",
+      "tier": "compose_override",
+      "fact_kind": "override",
+      "needs": [
+        "O2",
+        "F6"
+      ],
+      "hops": 2,
+      "question": "At what temperature does Protocol Amber hold its samples?",
+      "mem": "130 C",
+      "prior": "100 C",
+      "mem_match": [
+        "130"
+      ],
+      "prior_match": [
+        "100"
+      ],
+      "distractor_match": [
+        "chill",
+        "umber"
+      ]
+    },
+    {
+      "id": "Q9",
+      "tier": "compose_override",
+      "fact_kind": "override",
+      "needs": [
+        "O3",
+        "B2"
+      ],
+      "hops": 2,
+      "question": "On which mountain is the Institute's high-altitude station?",
+      "mem": "Mount Kenya",
+      "prior": "Mount Everest",
+      "mem_match": [
+        "kenya"
+      ],
+      "prior_match": [
+        "everest"
+      ],
+      "distractor_match": null
+    },
+    {
+      "id": "Q10",
+      "tier": "unanswerable",
+      "fact_kind": "none",
+      "needs": [],
+      "hops": 0,
+      "question": "Which unit does Dr. Priya Raman lead at the Institute?",
+      "mem": "NOT IN MEMORY",
+      "prior": null,
+      "mem_match": [],
+      "prior_match": null,
+      "distractor_match": null,
+      "expect_abstain": true
+    },
+    {
+      "id": "Q11",
+      "tier": "partially_specified",
+      "fact_kind": "fictional",
+      "needs": [
+        "F2"
+      ],
+      "hops": 1,
+      "question": "What is the room number of the Cartography Unit?",
+      "mem": "NOT IN MEMORY",
+      "prior": null,
+      "mem_match": [],
+      "prior_match": null,
+      "distractor_match": null,
+      "expect_abstain": true
+    },
+    {
+      "id": "Q12",
+      "tier": "ambiguous",
+      "fact_kind": "fictional",
+      "needs": [
+        "F1"
+      ],
+      "hops": 1,
+      "question": "Where does Voss work?",
+      "mem": "Cartography Unit / fourth floor, or a disambiguation request",
+      "prior": null,
+      "mem_match": [
+        "cartography",
+        "fourth",
+        "4th"
+      ],
+      "prior_match": null,
+      "distractor_match": [
+        "records annex",
+        "second floor",
+        "facilities"
+      ],
+      "always_review": true
+    },
+    {
+      "id": "QS1_CL",
+      "tier": "staleness",
+      "fact_kind": "fictional",
+      "needs": [
+        "S1a",
+        "S1b"
+      ],
+      "hops": 1,
+      "question": "Where is Kestrel-7 currently stationed?",
+      "mem": "Bracken depot",
+      "prior": null,
+      "mem_match": [
+        "bracken"
+      ],
+      "prior_match": null,
+      "stale_match": [
+        "northfield"
+      ],
+      "distractor_match": null,
+      "cue": "one dated, one undated",
+      "pair": "S1",
+      "order": "current_last",
+      "pin_order": [
+        "S1a",
+        "S1b"
+      ]
+    },
+    {
+      "id": "QS1_CF",
+      "tier": "staleness",
+      "fact_kind": "fictional",
+      "needs": [
+        "S1a",
+        "S1b"
+      ],
+      "hops": 1,
+      "question": "Where is Kestrel-7 currently stationed?",
+      "mem": "Bracken depot",
+      "prior": null,
+      "mem_match": [
+        "bracken"
+      ],
+      "prior_match": null,
+      "stale_match": [
+        "northfield"
+      ],
+      "distractor_match": null,
+      "cue": "one dated, one undated",
+      "pair": "S1",
+      "order": "current_first",
+      "pin_order": [
+        "S1b",
+        "S1a"
+      ]
+    },
+    {
+      "id": "QS2_CL",
+      "tier": "staleness",
+      "fact_kind": "fictional",
+      "needs": [
+        "S2a",
+        "S2b"
+      ],
+      "hops": 1,
+      "question": "Where is the Cartography Unit's server room?",
+      "mem": "east annex",
+      "prior": null,
+      "mem_match": [
+        "annex"
+      ],
+      "prior_match": null,
+      "stale_match": [
+        "basement"
+      ],
+      "distractor_match": null,
+      "cue": "both dated",
+      "pair": "S2",
+      "order": "current_last",
+      "pin_order": [
+        "S2a",
+        "S2b"
+      ]
+    },
+    {
+      "id": "QS2_CF",
+      "tier": "staleness",
+      "fact_kind": "fictional",
+      "needs": [
+        "S2a",
+        "S2b"
+      ],
+      "hops": 1,
+      "question": "Where is the Cartography Unit's server room?",
+      "mem": "east annex",
+      "prior": null,
+      "mem_match": [
+        "annex"
+      ],
+      "prior_match": null,
+      "stale_match": [
+        "basement"
+      ],
+      "distractor_match": null,
+      "cue": "both dated",
+      "pair": "S2",
+      "order": "current_first",
+      "pin_order": [
+        "S2b",
+        "S2a"
+      ]
+    },
+    {
+      "id": "QS3_CL",
+      "tier": "staleness",
+      "fact_kind": "fictional",
+      "needs": [
+        "S3a",
+        "S3b"
+      ],
+      "hops": 1,
+      "question": "Who is the night shift supervisor?",
+      "mem": "Sanne de Vries",
+      "prior": null,
+      "mem_match": [
+        "sanne",
+        "vries"
+      ],
+      "prior_match": null,
+      "stale_match": [
+        "ivo",
+        "brandt"
+      ],
+      "distractor_match": null,
+      "cue": "no dates, 'now' only",
+      "pair": "S3",
+      "order": "current_last",
+      "pin_order": [
+        "S3a",
+        "S3b"
+      ]
+    },
+    {
+      "id": "QS3_CF",
+      "tier": "staleness",
+      "fact_kind": "fictional",
+      "needs": [
+        "S3a",
+        "S3b"
+      ],
+      "hops": 1,
+      "question": "Who is the night shift supervisor?",
+      "mem": "Sanne de Vries",
+      "prior": null,
+      "mem_match": [
+        "sanne",
+        "vries"
+      ],
+      "prior_match": null,
+      "stale_match": [
+        "ivo",
+        "brandt"
+      ],
+      "distractor_match": null,
+      "cue": "no dates, 'now' only",
+      "pair": "S3",
+      "order": "current_first",
+      "pin_order": [
+        "S3b",
+        "S3a"
+      ]
+    },
+    {
+      "id": "QS4_CL",
+      "tier": "staleness",
+      "fact_kind": "fictional",
+      "needs": [
+        "S4a",
+        "S4b"
+      ],
+      "hops": 1,
+      "question": "Who issues access badges?",
+      "mem": "Halden lobby desk",
+      "prior": null,
+      "mem_match": [
+        "lobby"
+      ],
+      "prior_match": null,
+      "stale_match": [
+        "records annex"
+      ],
+      "distractor_match": null,
+      "cue": "explicit supersession",
+      "pair": "S4",
+      "order": "current_last",
+      "pin_order": [
+        "S4a",
+        "S4b"
+      ]
+    },
+    {
+      "id": "QS4_CF",
+      "tier": "staleness",
+      "fact_kind": "fictional",
+      "needs": [
+        "S4a",
+        "S4b"
+      ],
+      "hops": 1,
+      "question": "Who issues access badges?",
+      "mem": "Halden lobby desk",
+      "prior": null,
+      "mem_match": [
+        "lobby"
+      ],
+      "prior_match": null,
+      "stale_match": [
+        "records annex"
+      ],
+      "distractor_match": null,
+      "cue": "explicit supersession",
+      "pair": "S4",
+      "order": "current_first",
+      "pin_order": [
+        "S4b",
+        "S4a"
+      ]
+    }
+  ],
+  "distractors": {
+    "random": [
+      "The Institute cafeteria serves lentil soup on Wednesdays.",
+      "The archive catalogue was migrated to a new system last spring.",
+      "Bicycle racks are located behind the east loading dock.",
+      "The visitor car park closes at 22:00 on weekends.",
+      "Fern Rossi coordinates the summer lecture series.",
+      "The library subscribes to eleven cartography journals."
+    ],
+    "confusable": [
+      "Alexis Voss-Meyer works in the Records Annex on the second floor.",
+      "Marek Voss is the facilities coordinator for the Halden Building.",
+      "The Climatology Unit is on the fourth floor of the Bramwell Building.",
+      "Kestrel-4 was decommissioned and is stored at Northfield.",
+      "Tomas Aldrich manages procurement for the Cartography Unit.",
+      "Protocol Umber requires samples to be chilled for two minutes."
+    ]
+  }
+}
